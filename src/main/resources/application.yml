@@ -1,0 +1,49 @@
+server:
+  port: 8089
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/efn?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+jwt:
+  tokenHeader: Authorization #JWT存储的请求头
+  secret: efn-admin-secret #JWT加解密使用的密钥
+  expiration: 604800 #JWT的超期限时间(60*60*24*7)
+  tokenHead: 'Bearer '  #JWT负载中拿到开头
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml #指定mapper.xml路径
+  global-config:
+    db-config:
+      id-type: auto #全局默认主键类型设置为自增
+  configuration:
+    auto-mapping-behavior: partial #只对非嵌套的 resultMap 进行自动映射
+    map-underscore-to-camel-case: true #开启自动驼峰命名规则映射
+redis:
+  database: efn
+  key:
+    admin: 'ums:admin'
+    resourceList: 'ums:resourceList'
+  expire:
+    common: 86400 # 24小时
+secure:
+  ignored:
+    urls: #安全路径白名单
+      - /swagger-ui.html
+      - /swagger-resources/**
+      - /swagger/**
+      - /**/v2/api-docs
+      - /**/*.js
+      - /**/*.css
+      - /**/*.png
+      - /**/*.ico
+      - /webjars/springfox-swagger-ui/**
+      - /actuator/**
+      - /druid/**
+      - /admin/login
+      - /admin/register
+      - /admin/info
+      - /admin/updatePassword
+      - /admin/logout
+      - /minio/upload

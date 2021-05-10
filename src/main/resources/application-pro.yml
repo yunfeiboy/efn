@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_hgfdb_cn?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: fja8u93I5f#dj8
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml #指定mapper.xml路径
+  global-config:
+    db-config:
+      id-type: auto #全局默认主键类型设置为自增
+  configuration:
+    auto-mapping-behavior: partial #只对非嵌套的 resultMap 进行自动映射
+    map-underscore-to-camel-case: true #开启自动驼峰命名规则映射
+logging:
+  level:
+    com.baomidou.mybatisplus.samples: debug

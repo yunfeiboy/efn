@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nowbio.database.efn.modules.fa.mapper.FaGeneMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.nowbio.database.efn.modules.fa.model.FaGene">
+        <id column="id" property="id" />
+        <result column="reference" property="reference" />
+        <result column="gene_locus" property="geneLocus" />
+        <result column="chr" property="chr" />
+        <result column="start" property="start" />
+        <result column="end" property="end" />
+        <result column="strand" property="strand" />
+        <result column="length" property="length" />
+        <result column="description" property="description" />
+        <result column="sequence_id" property="sequenceId" />
+        <result column="cds" property="cds" />
+        <result column="pep" property="pep" />
+    </resultMap>
+    <select id="GroupByKeyWord"     resultType="com.nowbio.database.efn.modules.fa.model.tda.GeneGroup">
+         select`chr` as name,  `chr` as value  from fa_gene group by`chr`
+    </select>
+</mapper>
