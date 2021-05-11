@@ -3,7 +3,7 @@ package com.nowbio.database.efn.modules.ums.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.nowbio.database.efn.common.api.CommonResult;
-import com.nowbio.database.efn.component.DynamicSecurityMetadataSource;
+import com.nowbio.database.efn.security.component.DynamicSecurityMetadataSource;
 import com.nowbio.database.efn.modules.ums.model.UmsResource;
 import com.nowbio.database.efn.modules.ums.service.UmsResourceService;
 import io.swagger.annotations.Api;

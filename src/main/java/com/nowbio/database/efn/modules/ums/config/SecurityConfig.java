@@ -1,11 +1,11 @@
 package com.nowbio.database.efn.modules.ums.config;
 
 
-import com.nowbio.database.efn.component.JwtAuthenticationTokenFilter;
-import com.nowbio.database.efn.component.RestAuthenticationEntryPoint;
-import com.nowbio.database.efn.component.RestfulAccessDeniedHandler;
+import com.nowbio.database.efn.security.component.RestAuthenticationEntryPoint;
+import com.nowbio.database.efn.security.component.RestfulAccessDeniedHandler;
 import com.nowbio.database.efn.modules.ums.service.UmsAdminService;
 import com.nowbio.database.efn.modules.ums.service.UmsResourceService;
+import com.nowbio.database.efn.security.component.JwtAuthenticationTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;

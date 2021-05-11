@@ -6,8 +6,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.github.pagehelper.PageHelper;
-import com.nowbio.database.efn.common.utils.JwtTokenUtil;
+import com.nowbio.database.efn.security.utils.JwtTokenUtil;
 import com.nowbio.database.efn.common.utils.RequestUtil;
 import com.nowbio.database.efn.modules.ums.dao.UmsAdminRoleRelationDao;
 import com.nowbio.database.efn.modules.ums.dto.AdminRegisterParam;
@@ -84,8 +83,8 @@ public class UmsAdminServiceImpl extends ServiceImpl<UmsAdminMapper, UmsAdmin> i
     public UmsAdmin getAdminByUsername(String username) {
         UmsAdmin admin = adminCacheService.getAdmin(username);
         if(admin!=null) return  admin;
-        QueryWrapper<UmsAdmin> queryWrapper = new QueryWrapper();
-        queryWrapper.eq("username",username);
+        QueryWrapper<UmsAdmin> queryWrapper = new QueryWrapper<>();
+        queryWrapper.lambda().eq(UmsAdmin::getUsername,username);
         UmsAdmin user = baseMapper.selectOne(queryWrapper);
         if(user != null){
             adminCacheService.setAdmin(user);
@@ -121,7 +120,7 @@ public class UmsAdminServiceImpl extends ServiceImpl<UmsAdminMapper, UmsAdmin> i
         umsAdmin.setStatus(1);
 
         QueryWrapper<UmsAdmin> queryWrapper = new QueryWrapper();
-        queryWrapper.eq("username",umsAdminParam.getUsername());
+        queryWrapper.lambda().eq(UmsAdmin::getUsername,umsAdminParam.getUsername());
         List<UmsAdmin> umsAdminList = baseMapper.selectList(queryWrapper);
         if (umsAdminList.size() > 0) {
             return null;

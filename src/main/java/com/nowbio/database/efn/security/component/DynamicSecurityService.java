@@ -1,4 +1,4 @@
-package com.nowbio.database.efn.component;
+package com.nowbio.database.efn.security.component;
 
 import org.springframework.security.access.ConfigAttribute;
 

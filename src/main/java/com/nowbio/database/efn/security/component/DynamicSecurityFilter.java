@@ -1,7 +1,7 @@
-package com.nowbio.database.efn.component;
+package com.nowbio.database.efn.security.component;
 
 
-import com.nowbio.database.efn.config.IgnoreUrlsConfig;
+import com.nowbio.database.efn.security.config.IgnoreUrlsConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.access.SecurityMetadataSource;

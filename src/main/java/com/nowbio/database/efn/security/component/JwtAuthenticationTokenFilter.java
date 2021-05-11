@@ -1,6 +1,6 @@
-package com.nowbio.database.efn.component;
+package com.nowbio.database.efn.security.component;
 
-import com.nowbio.database.efn.common.utils.JwtTokenUtil;
+import com.nowbio.database.efn.security.utils.JwtTokenUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

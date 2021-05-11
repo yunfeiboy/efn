@@ -1,11 +1,10 @@
-package com.nowbio.database.efn.component;
+package com.nowbio.database.efn.security.component;
 
 
 import cn.hutool.json.JSONUtil;
 import com.nowbio.database.efn.common.api.CommonResult;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
-import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

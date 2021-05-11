@@ -1,9 +1,10 @@
 package com.nowbio.database.efn.config;
 
-import com.nowbio.database.efn.component.DynamicSecurityService;
+import com.nowbio.database.efn.security.component.DynamicSecurityService;
 import com.nowbio.database.efn.modules.ums.model.UmsResource;
 import com.nowbio.database.efn.modules.ums.service.UmsAdminService;
 import com.nowbio.database.efn.modules.ums.service.UmsResourceService;
+import com.nowbio.database.efn.security.config.SecurityConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
